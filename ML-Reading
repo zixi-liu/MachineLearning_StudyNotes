@@ -1,7 +1,13 @@
 Machine Learning 阅读笔记
+
 1.1.1 机器学习的种类
 1）预测性 监督学习（Predictive Supervised Learning）
 training input：features, attributes or covariates
 more example：an image, a sentence, an email message, a time series, a molecular shape, a graph, etc
 如果y是categorical，是Classification或者Pattern Recognition。
 如果y是numerical，是regression。（注意：Ordinal regression，y本身有natural ordering）。
+2）描述性 无监督学习（Descriptive Unsupervised Learning）
+3）强化学习（这本书暂不讨论）
+
+1.2 监督学习
+1.2.1 Classification分类
