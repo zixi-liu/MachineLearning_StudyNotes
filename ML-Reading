@@ -11,3 +11,11 @@ more example：an image, a sentence, an email message, a time series, a molecula
 
 1.2 监督学习
 1.2.1 Classification分类
+number of class=2: binary classification
+number of class>2: multiclass classification
+（If the class labels are not mutually exclusive (e.g., somebody may be
+classified as tall and strong), we call it multi-label classification）
+
+1.2.1.3现实生活中的视线
+Document classification and email spam filtering
+
