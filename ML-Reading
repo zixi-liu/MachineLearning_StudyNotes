@@ -16,6 +16,18 @@ number of class>2: multiclass classification
 （If the class labels are not mutually exclusive (e.g., somebody may be
 classified as tall and strong), we call it multi-label classification）
 
-1.2.1.3现实生活中的视线
+1.2.1.3现实生活中的实现
 Document classification and email spam filtering
+Classifying flowers
+Image classification and handwriting recognition
+Face detection and recognition
+sliding window detector 识别face-like texture
 
+补充说明：Object Localization 是深度学习Object Detection 演算法
+https://www.youtube.com/watch?v=aE1kA0Jy0Xg&feature=youtu.be
+／Sliding Windows是最简单的做法但要扫描多次 丢到CNN中去分类，速度较慢
+／什么是R-CNN？
+1）预选筛选出可能的2000个区域Region Proposals
+2）用训练好的CNN模型如AlexNet摘取特征
+3）SVM (Support Vector Machine）分类器区分物体或背影
+4）线性回归模型确定bounding box
