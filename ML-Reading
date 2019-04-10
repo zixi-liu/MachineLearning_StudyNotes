@@ -41,3 +41,38 @@ Link：https://medium.com/@syshen/%E7%89%A9%E9%AB%94%E5%81%B5%E6%B8%AC-object-de
 关于用户画像的补充
 用户数据-动态信息数据／静态信息数据
 1）清洗数据 2）因素分析 3）相关分析 4）聚类分析
+1.3.2 发现潜在因子（Latent Factors）
+/ there may only be a small number of degrees of variability, corresponding to latent factors.
+For example, when modeling the appearance of face images, there may only be a few underlying
+latent factors which describe most of the variability, such as lighting, pose, identity, etc.
+* Low dimensional representations are useful for enabling fastnearest neighbor searches and 
+two dimensional projections are very useful for visualizing high dimensional data.
+PCA 主成分分析---可以看作是线性回归的无监督学习
+注：计算机图像中，用来投射动图到低维空间。
+In computer graphics, it is common to project motion capture data to a low dimensional
+space, and use it to create animations
+
+1.3.3 发现图片结构
+* To discover new knowledge, and to get better joint probability density estimators.
+
+1.3.4 Matrix Completion
+1.3.4.1 Image Impainting
+1.3.4.2 Collaborative filtering
+
+1.4 机器学习的一些基本概念
+参数（参数固定）／非参数模型（参数增长）
+1.4.2 简单的非参数模型：
+KNN分类器
+
+1.4.3 The curse of dimensionality
+KNN不适合高维的数据
+
+1.4.4 分类和回归的参数模型
+1.4.5 线性回归
+1.4.6 逻辑回归
+Induce a decision rule
+1.4.7 Overfitting
+1.4.8 模型选择
+Misclassification Rate
+Cross Validation
+
