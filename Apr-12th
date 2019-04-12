@@ -1,0 +1,44 @@
+线性回归／等等
+线性回归、岭回归、Lasso回归
+
+1. 线性回归
+* 求解损失函数的最小值有两种方法：梯度下降法以及正规方程
+* 特征缩放：即对特征数据进行归一化操作，进行特征缩放的好处有两点，一是能够提升模型的收敛速度，因为如果特征间的数据相差级别较大的话，
+以两个特征为例，以这两个特征为横纵坐标绘制等高线图，绘制出来是扁平状的椭圆，这时候通过梯度下降法寻找梯度方向最终将走垂直于等高线的之字形路线，
+迭代速度变慢。但是如果对特征进行归一化操作之后，整个等高线图将呈现圆形，梯度的方向是指向圆心的，迭代速度远远大于前者。二是能够提升模型精度。
+* 学习率α的选取：如果学习率α选取过小，会导致迭代次数变多，收敛速度变慢；学习率α选取过大，有可能会跳过最优解，最终导致根本无法收敛。
+／过拟合问题及其解决方法
+(1)：丢弃一些对我们最终预测结果影响不大的特征，具体哪些特征需要丢弃可以通过PCA算法来实现；(2)：使用正则化技术，保留所有特征，
+但是减少特征前面的参数θ的大小，具体就是修改线性回归中的损失函数形式即可，岭回归以及Lasso回归就是这么做的。
+Code Example：
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import datasets, linear_model, discriminant_analysis, cross_validation
+
+def load_data():
+    diabetes = datasets.load_diabetes()
+    return cross_validation.train_test_split(diabetes.data, diabetes.target, test_size=0.25, random_state=0)
+
+def test_LinearRegression(*data):
+    X_train, X_test, y_train, y_test = data
+    #通过sklearn的linear_model创建线性回归对象
+    linearRegression = linear_model.LinearRegression()
+    #进行训练
+    linearRegression.fit(X_train, y_train)
+    #通过LinearRegression的coef_属性获得权重向量,intercept_获得b的值
+    print("权重向量:%s, b的值为:%.2f" % (linearRegression.coef_, linearRegression.intercept_))
+    #计算出损失函数的值
+    print("损失函数的值: %.2f" % np.mean((linearRegression.predict(X_test) - y_test) ** 2))
+    #计算预测性能得分
+    print("预测性能得分: %.2f" % linearRegression.score(X_test, y_test))
+
+if __name__ == '__main__':
+    #获得数据集
+    X_train, X_test, y_train, y_test = load_data()
+    #进行训练并且输出预测结果
+    test_LinearRegression(X_train, X_test, y_train, y_test)
+
+2. 岭回归与Lasso回归
+
+岭回归与Lasso回归的出现是为了解决线性回归出现的过拟合以及在通过正规方程方法求解θ的过程中出现的x转置乘以x不可逆这两类问题的，
+这两种回归均通过在损失函数中引入正则化项来达到目的，具体三者的损失函数对比见下图： 
