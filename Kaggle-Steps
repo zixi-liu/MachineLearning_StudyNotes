@@ -46,3 +46,17 @@ We may also add to our assumptions based on the problem description noted earlie
 1.Women (Sex=female) were more likely to have survived.
 2.Children (Age<?) were more likely to have survived.
 3.The upper-class passengers (Pclass=1) were more likely to have survived.
+
+#################
+
+Supervised Learning plus Classification and Regression, we can narrow down our choice of models to a few. These include:
+
+Logistic Regression
+KNN or k-Nearest Neighbors
+Support Vector Machines
+Naive Bayes classifier
+Decision Tree
+Random Forrest
+Perceptron
+Artificial neural network
+RVM or Relevance Vector Machine
