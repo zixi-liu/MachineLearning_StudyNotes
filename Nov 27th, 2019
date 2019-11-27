@@ -1,0 +1,8 @@
+*Type of Machine Learning Techniques*
+
+i. Unsupervised Machine Learning
+
+Clustering 
+K-means, DBSCAN(Density-Based Spatial Clustering of Applications with Noise)
+Hierrarchical Clustering
+t-SNE(t-Distributed Stochastic Neighbor Embeddding)
